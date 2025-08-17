@@ -1,0 +1,82 @@
+
+.footer {
+  background-color: #2B3A41;
+  color: #aaa;
+  font-family: sans-serif;
+}
+
+.footer h3 {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.footer p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.footer-links,
+.footer-contact {
+  list-style: none;
+  padding-left: 0;
+}
+
+.footer-links li,
+.footer-contact li {
+  margin-bottom: 10px;
+}
+
+.footer a {
+  text-decoration: none;
+  color: #aaa;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #01B075;
+}
+
+
+.social-media {
+  margin-top: 15px;
+}
+
+.social-media span {
+  margin-right: 15px;
+  font-size: 18px;
+  color: #aaa;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.social-media span:hover {
+  color: #01B075;
+}
+
+.input-group {
+  display: flex;
+  margin-top: 15px;
+}
+
+.input-group .form-control {
+  border-radius: 0;
+  padding: 10px;
+  border: none;
+  outline: none;
+  flex: 1;
+  
+}
+
+.input-group .btn-subscribe {
+  background-color: #01B075;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 0;
+  transition: background-color 0.3s ease;
+}
+
+.input-group .btn-subscribe:hover {
+  background-color: #019964;
+}

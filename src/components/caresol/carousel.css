@@ -1,0 +1,89 @@
+.c-item {
+  position: absolute;
+  top: 0;
+  left: 5%; 
+ transform: translate(-15%, 30%);
+  color: white;
+  /* transform: translateX(-50px) !important; */
+ width: 400px;
+ text-align: left !important;
+}
+.c-item h3{
+    font-size: 40px;
+}
+.btn-carousle{
+    display: flex;
+    gap: 20px;
+    justify-content: flex-start;
+}
+.btn-carousle button{
+    padding: 8px;
+    background-color: #01B075;
+    border: 2px solid #01B075;
+    border-radius: 6px;
+    color: white;
+}
+.btn-carousle button:last-child{
+    background-color: #2B9BFF;
+     border: 2px solid  #2B9BFF;
+}
+.d-line1{
+    width: 10px;
+    height: 300px;
+    background-color: #01B075;
+    position: absolute;
+    top: -5%;
+    left: -7%;
+}
+.d-line2{
+    width: 150px;
+    height: 10px;
+    background-color: #01B075;
+    position: absolute;
+    top: 45%;
+    left: -5%;
+}
+.d-line3{
+    width: 150px;
+    height: 10px;
+    background-color: #01B075;
+    position: absolute;
+    top: -5%;
+    left: -5%;
+}
+.colapse{
+    background-color: #01B075;
+    padding: 12px;
+}
+.colapse input{
+width: 18%;
+padding: 8px;
+border-radius: 8px;
+border: none;
+outline: none;
+}
+.c-dropdown{
+    width: 18% !important;
+}
+.btn-carousel-search{
+    width: 18%;
+    padding: 8px;
+    border-radius: 8px;
+    color: white;
+    background-color: black;
+    outline: none;
+    border: 1px solid black;
+
+}
+@media (max-width: 767px) {
+    .d-line1 {
+        display: none;
+    }
+    .d-line2{
+        display: none;
+    }
+    .d-line3{
+        display: none;
+    }
+    
+}

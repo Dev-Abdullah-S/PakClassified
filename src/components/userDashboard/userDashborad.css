@@ -1,0 +1,27 @@
+.userdashbord-img{
+    width: 300px !important;
+    height: 180px;
+    border-radius: 8px !important;
+}
+.user-item-card{
+    display: flex !important;
+    gap: 20px;
+    border: 1px solid rgb(179, 179, 179);
+    padding: 16px;
+    border-radius: 8px;
+}
+.user_img{
+    height: 150px !important;
+    width: 150px !important;
+    object-fit: cover !important;
+    border-radius: 50% !important;
+}
+@media (max-width: 767.98px) {
+        .user-item-card{
+            flex-direction: column;
+        }
+        .userdashbord-img{
+              width: 100% !important;
+              height: auto;
+        }
+}

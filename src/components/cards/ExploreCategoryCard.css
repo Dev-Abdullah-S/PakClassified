@@ -1,0 +1,22 @@
+
+
+.custom-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.custom-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+}
+
+.custom-card img {
+  transition: transform 0.3s ease;
+}
+
+.custom-card:hover img {
+  transform: scale(1.05);
+}

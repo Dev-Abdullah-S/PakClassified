@@ -1,0 +1,26 @@
+
+
+.custom-card2 {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: default;
+}
+
+.custom-card2:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+}
+
+.custom-card2 img {
+  transition: transform 0.3s ease;
+}
+
+.custom-card2:hover img {
+  transform: scale(1.05);
+}
+.btn-lastest-posting{
+      background-color: #01B075 !important;
+     color: white !important;
+    }
