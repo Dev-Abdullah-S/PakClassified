@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://Dev-Abdullah-S.github.io/PakClassified-frontend",
+  "homepage": "https://Dev-Abdullah-S.github.io/PakClassified",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
