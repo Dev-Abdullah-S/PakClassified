@@ -5,6 +5,7 @@ import { TextField, Button, Box, Typography } from "@mui/material";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
+const API_URL = import.meta.env.VITE_API_URL;
 
 export default function SignupModal({ show, onClose }) {
   const navigate = useNavigate();
@@ -28,7 +29,7 @@ export default function SignupModal({ show, onClose }) {
         formData.append("User_img", data.User_img[0]);
       }
 
-      fetch("http://localhost:4500/api/user/signup", {
+      fetch(`${API_URL}/api/user/signup`, {
         method: "POST",
         body: formData,
       })

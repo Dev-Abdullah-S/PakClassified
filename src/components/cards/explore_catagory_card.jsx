@@ -2,11 +2,12 @@ import { Card, Container, Row, Col } from "react-bootstrap";
 import "./ExploreCategoryCard.css";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+const API_URL = import.meta.env.VITE_API_URL;
 
 export default function ExploreCatagoryCard() {
   const [catagory, setCatagory] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:4500/api/catagory")
+    fetch(`${API_URL}/api/catagory`)
       .then((res) => res.json())
       .then((data) => setCatagory(data))
       .catch((err) => console.error(err));

@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setSelectedCar } from "../../slices/selectedCarSlice";
 import { useNavigate } from "react-router-dom";
-
+const API_URL = import.meta.env.VITE_API_URL;
 export default function CatagoriesdComponent() {
   const { id } = useParams();
   const [adv, setAdv] = useState([]);
@@ -13,7 +13,7 @@ export default function CatagoriesdComponent() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`http://localhost:4500/api/advertisment/category/${id}`)
+    fetch(`${API_URL}/api/advertisment/category/${id}`)
       .then((res) => res.json())
       .then((data) => setAdv(data))
       .catch((err) => console.error(err));
@@ -45,7 +45,7 @@ export default function CatagoriesdComponent() {
           adv.map((item, index) => (
             <Row className="adv-c-list" key={index}>
               <Col xs={12} sm={12} md={3} className="px-0 py-2">
-                <img src={`http://localhost:4500${item.Img}`} alt="Img" />
+                <img src={`${API_URL}${item.Img}`} alt="Img" />
               </Col>
               <Col className="adv-c-box2 py-2">
                 <h4>{item.Name}</h4>

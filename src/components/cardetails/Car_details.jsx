@@ -9,6 +9,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import "./cardetails.css";
 import { useSelector } from "react-redux";
+const API_URL = import.meta.env.VITE_API_URL;
 
 export default function CarDetalils() {
   const carData = useSelector((state) => state.selectedCar.car);
@@ -17,7 +18,7 @@ export default function CarDetalils() {
   useEffect(() => {
     if (!carData?.User_ID) return;
 
-    fetch(`http://localhost:4500/api/user/${carData.User_ID}`)
+    fetch(`${API_URL}/api/user/${carData.User_ID}`)
       .then((res) => res.json())
       .then((data) => setUser(data))
       .catch(console.error);
@@ -40,7 +41,7 @@ export default function CarDetalils() {
             <Row>
               <Col xs={12} sm={12} md={3}>
                 <img
-                  src={`http://localhost:4500${carData.Img}`}
+                  src={`${API_URL}${carData.Img}`}
                   className="w-100"
                   alt=""
                 />

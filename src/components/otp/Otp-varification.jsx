@@ -3,6 +3,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Container } from "react-bootstrap";
+const API_URL = import.meta.env.VITE_API_URL;
 
 export default function OtpPage() {
   const [otp, setOtp] = useState(new Array(6).fill(""));
@@ -45,7 +46,7 @@ export default function OtpPage() {
     }
 
     try {
-      const res = await fetch("http://localhost:4500/api/user/verify-otp", {
+      const res = await fetch(`${API_URL}/api/user/verify-otp`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ userId, otpCode: finalOtp }),

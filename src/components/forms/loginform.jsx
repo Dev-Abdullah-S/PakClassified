@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useDispatch } from "react-redux";
 import { setUserInfo } from "../../slices/userSlice";
+const API_URL = import.meta.env.VITE_API_URL;
 
 export default function LoginModal({ show, onClose }) {
   const navigate = useNavigate();
@@ -24,7 +25,7 @@ export default function LoginModal({ show, onClose }) {
         Password: data.password,
       };
 
-      const response = await fetch("http://localhost:4500/api/user/login", {
+      const response = await fetch(`${API_URL}/api/user/login`, {
         method: "POST",
         body: JSON.stringify(payload),
         headers: {

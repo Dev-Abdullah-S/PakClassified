@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { setSelectedCar } from "../../slices/selectedCarSlice";
 import { useNavigate } from "react-router-dom";
 import "./latest_posting.css";
+const API_URL = import.meta.env.VITE_API_URL;
 
 export default function LatestPosting() {
   const [latestAds, setLatestAds] = useState([]);
@@ -12,11 +13,11 @@ export default function LatestPosting() {
 
   const goToCarDetails = (car) => {
     dispatch(setSelectedCar(car));
-    navigate("/Car_details");
+    navigate("/Car_details"); 
   };
 
   useEffect(() => {
-    fetch("http://localhost:4500/api/advertisment/getLatestAdv")
+    fetch(`${API_URL}/api/advertisment/getLatestAdv`)
       .then((res) => {
         if (!res.ok) {
           throw new Error("Failed to fetch latest ads");
@@ -46,7 +47,7 @@ export default function LatestPosting() {
               <Card.Img
                 variant="top"
                 style={{ height: "300px", objectFit: "cover" }}
-                src={`http://localhost:4500${item.Img}`} // Ye API ka image URL hoga
+                src={`${API_URL}${item.Img}`} // Ye API ka image URL hoga
               />
               <Card.Body>
                 <Card.Title className="fw-bold">{item.Name}</Card.Title>

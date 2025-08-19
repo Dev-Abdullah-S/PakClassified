@@ -16,6 +16,7 @@ import { useNavigate } from "react-router-dom";
 import "./carousel.css";
 import PostAdvertisment from "../forms/postAdv";
 import { useSelector } from "react-redux";
+const API_URL = import.meta.env.VITE_API_URL;
 
 function CarouselLanding() {
   const [keyword, setKeyword] = useState("");
@@ -39,12 +40,12 @@ function CarouselLanding() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:4500/api/catagory")
+    fetch(`${API_URL}/api/catagory`)
       .then((res) => res.json())
       .then((data) => setCategories(data))
       .catch((err) => console.error(err));
 
-    fetch("http://localhost:4500/api/city_area")
+    fetch(`${API_URL}/api/city_area`)
       .then((res) => res.json())
       .then((data) => setCityAreas(data))
       .catch((err) => console.error(err));
@@ -72,7 +73,7 @@ function CarouselLanding() {
     if (selectedCityArea) params.append("cityAreaId", selectedCityArea._id);
 
     const res = await fetch(
-      `http://localhost:4500/api/advertisment/search?${params.toString()}`
+      `${API_URL}/api/advertisment/search?${params.toString()}`
     );
     if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
 
@@ -231,7 +232,7 @@ function CarouselLanding() {
                     <Card.Img
                       variant="top"
                       style={{ height: "300px", objectFit: "cover" }}
-                      src={`http://localhost:4500${ad.Img}`}
+                      src={`${API_URL}${ad.Img}`}
                     />
                     <Card.Body>
                       <Card.Title className="fw-bold">{ad.Name}</Card.Title>

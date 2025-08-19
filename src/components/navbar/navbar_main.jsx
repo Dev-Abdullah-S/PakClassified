@@ -29,6 +29,7 @@ import SignupModal from "../forms/signup";
 import PostAdvertisment from "../forms/postAdv";
 import { useSelector, useDispatch } from "react-redux";
 import { setUserLogout } from "../../slices/userSlice";
+const API_URL = import.meta.env.VITE_API_URL;
 
 export default function NavbarMain() {
   const [category, setCategory] = useState([]);
@@ -39,7 +40,7 @@ export default function NavbarMain() {
   const [login, setLogin] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:4500/api/catagory")
+    fetch(`${API_URL}/api/catagory`)
       .then((res) => res.json())
       .then((data) => setCategory(data))
       .catch((err) => console.error(err));
@@ -123,7 +124,7 @@ export default function NavbarMain() {
               >
                 <img
                   className="w-100 h-100 "
-                  src={`http://localhost:4500/uploads/${isLogggedIn.ImgPath}`}
+                  src={`${API_URL}/uploads/${isLogggedIn.ImgPath}`}
                   alt={isLogggedIn.UserName || "User"}
                 />
               </Dropdown.Toggle>

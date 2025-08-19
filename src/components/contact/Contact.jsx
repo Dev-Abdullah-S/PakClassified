@@ -7,13 +7,14 @@ import { TextField, Button } from "@mui/material";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./contact.css";
+const API_URL = import.meta.env.VITE_API_URL;
 
 export default function Contact() {
   const { control, handleSubmit, reset } = useForm();
 
   const onSubmit = async (data) => {
     try {
-      const res = await fetch("http://localhost:4500/api/contact", {
+      const res = await fetch(`${API_URL}/api/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),

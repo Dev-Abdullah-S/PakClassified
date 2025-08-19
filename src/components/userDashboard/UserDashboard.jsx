@@ -9,6 +9,7 @@ import "./userDashborad.css";
 import { useForm } from "react-hook-form";
 import { TextField, Box } from "@mui/material";
 import { setSelectedCar } from "../../slices/selectedCarSlice";
+const API_URL = import.meta.env.VITE_API_URL;
 
 export default function UserDashboeard() {
   const user = useSelector((state) => state.userInfo.userInfo);
@@ -26,7 +27,7 @@ export default function UserDashboeard() {
   // Fetch user data
   useEffect(() => {
     if (!user?.ID) return;
-    fetch(`http://localhost:4500/api/user/${user.ID}`)
+    fetch(`${API_URL}/api/user/${user.ID}`)
       .then((res) => res.json())
       .then((data) => setUserData(data))
       .catch(console.error);
@@ -35,7 +36,7 @@ export default function UserDashboeard() {
   // Fetch advertisements
   useEffect(() => {
     if (!user?.ID) return;
-    fetch(`http://localhost:4500/api/advertisment/${user.ID}`)
+    fetch(`${API_URL}/api/advertisment/${user.ID}`)
       .then((res) => res.json())
       .then((data) => setAdv(data))
       .catch(console.error);
@@ -54,7 +55,7 @@ export default function UserDashboeard() {
   // Delete advertisement action
   function confirmDeleteAdv() {
     if (!selectedAdvId) return;
-    fetch(`http://localhost:4500/api/advertisment/${selectedAdvId}`, {
+    fetch(`${API_URL}/api/advertisment/${selectedAdvId}`, {
       method: "DELETE",
     })
       .then((res) => {
@@ -117,7 +118,7 @@ export default function UserDashboeard() {
 
   const handleFormSubmit = async (data) => {
     try {
-      const res = await fetch(`http://localhost:4500/api/user/${user.ID}`, {
+      const res = await fetch(`${API_URL}/api/user/${user.ID}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -302,7 +303,7 @@ export default function UserDashboeard() {
             <Card className="w-100 mt-3 p-3 mb-3">
               <div className="d-flex justify-content-center mb-2">
                 <Card.Img
-                  src={`http://localhost:4500/uploads/${userData?.User_img}`}
+                  src={`${API_URL}/uploads/${userData?.User_img}`}
                   className="user_img"
                 />
               </div>
@@ -347,7 +348,7 @@ export default function UserDashboeard() {
               <Card className="user-item-card mb-3" key={index}>
                 <Card.Img
                   className="userdashbord-img"
-                  src={`http://localhost:4500${item.Img}`}
+                  src={`${API_URL}${item.Img}`}
                 />
                 <Card.Body>
                   <Card.Title>{item?.Name}</Card.Title>

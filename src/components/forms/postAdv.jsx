@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { TextField, Button, Box } from "@mui/material";
 import { toast } from "react-toastify";
 import { useSelector } from "react-redux";
+const API_URL = import.meta.env.VITE_API_URL;
 
 export default function PostAdvertisment({ show, onClose, initialData }) {
   const [city, setCity] = useState([]);
@@ -12,21 +13,21 @@ export default function PostAdvertisment({ show, onClose, initialData }) {
   let userId = useSelector((state) => state.userInfo.userInfo?.ID) || null;
 
   useEffect(() => {
-    fetch("http://localhost:4500/api/city_area")
+    fetch(`${API_URL}/api/city_area`)
       .then((res) => res.json())
       .then((data) => setCity(data))
       .catch((err) => console.error(`city fetch err ${err}`));
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:4500/api/catagory")
+    fetch(`${API_URL}/api/catagory`)
       .then((res) => res.json())
       .then((data) => setCategory(data))
       .catch((err) => console.error(`fetching error ${err}`));
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:4500/api/types")
+    fetch(`${API_URL}/api/types`)
       .then((res) => res.json())
       .then((data) => setType(data))
       .catch((err) => console.error(`fetching error ${err}`));
@@ -56,11 +57,11 @@ export default function PostAdvertisment({ show, onClose, initialData }) {
 
       formData.append("User_ID", userId);
 
-      let url = "http://localhost:4500/api/advertisment";
+      let url = `${API_URL}/api/advertisment`;
       let method = "POST";
 
       if (initialData && initialData._id) {
-        url = `http://localhost:4500/api/advertisment/${initialData._id}`;
+        url = `${API_URL}/api/advertisment/${initialData._id}`;
         method = "PUT";
       }
 
