@@ -113,7 +113,7 @@ function CarouselLanding() {
           <Carousel.Item key={idx} className="w-100">
             <img
               className="d-block w-100"
-              src={`/Images/${img}`}
+              src={`/PakClassified/Images/${img}`}
               alt={`Slide ${idx + 1}`}
               style={{ height: "600px", objectFit: "cover" }}
             />

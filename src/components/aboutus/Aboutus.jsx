@@ -8,7 +8,7 @@ export default function Aboutus() {
     <>
       <Container fluid className="px-0 catagories-container">
         <div className="catagoies-img">
-          <img src="/Images/g-wagon-black.png" alt="" />{" "}
+          <img src="/PakClassified/Images/g-wagon-black.png" alt="" />{" "}
         </div>
         <div className="c-d-1"></div>
         <div className="c-d-2"></div>
@@ -19,12 +19,12 @@ export default function Aboutus() {
         <Row>
           <Col xs={12} sm={12} md={6} className="main1-cont">
             <div className="about-img-1 d-flex flex-column">
-              <img src="/Images/cross1.jpg" alt="img" />
-              <img src="/Images/L-1.webp" alt="img" />
+              <img src="/PakClassified/Images/cross1.jpg" alt="img" />
+              <img src="/PakClassified/Images/L-1.webp" alt="img" />
             </div>
             <div className="about-img-2 d-flex flex-column">
-              <img src="/Images/wagon2.jpg" alt="img" />
-              <img src="/Images/wagon3.jpg" alt="img" />
+              <img src="/PakClassified/Images/wagon2.jpg" alt="img" />
+              <img src="/PakClassified/Images/wagon3.jpg" alt="img" />
             </div>
           </Col>
           <Col xs={12} sm={12} md={6}>

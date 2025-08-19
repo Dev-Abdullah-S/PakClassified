@@ -33,7 +33,7 @@ export default function ExploreCatagoryCard() {
                 <Card.Img
                   variant="top"
                   style={{ height: "250px", objectFit: "cover" }}
-                  src={`./Images/${item.Img}`}
+                  src={`/PakClassified/Images/${item.Img}`}
                 />
                 <Card.Body>
                   <Card.Title className="fw-bold">{item.Name}</Card.Title>

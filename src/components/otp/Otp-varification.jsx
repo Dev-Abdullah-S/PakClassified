@@ -70,7 +70,7 @@ export default function OtpPage() {
    <>
      <Container fluid className="px-0 catagories-container">
              <div className="catagoies-img">
-               <img src="/Images/g-wagon-black.png" alt="" />{" "}
+               <img src="/PakClassified/Images/g-wagon-black.png" alt="" />{" "}
              </div>
              <div className="c-d-1"></div>
              <div className="c-d-2"></div>
